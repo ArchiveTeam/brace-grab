@@ -223,7 +223,8 @@ project = Project(
         <img class="project-logo" alt="Project logo" src="http://archiveteam.org/images/b/bb/Bracelogo.png" height="50px" title=""/>
         <h2>brace.io <span class="links"><a href="http://brace.io/">Website</a> &middot; <a href="http://tracker.archiveteam.org/brace/">Leaderboard</a></span></h2>
         <p>Saving all brace.io websites.</p>
-    """
+    """,
+    utc_deadline=datetime.datetime(2015, 1, 19, 23, 59, 0)
 )
 
 pipeline = Pipeline(
