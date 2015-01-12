@@ -88,7 +88,9 @@ wget.callbacks.httploop_result = function(url, err, http_stat)
     end
   end
   
-  if status_code >= 500 or
+  if string.match(url["url"], "http[s]?://[^/]+/robots%.txt") or string.match(url["url"], "http[s]?://[^/]+/sitemap%.xml") then
+    return wget.actions.EXIT
+  elseif status_code >= 500 or
     (status_code >= 400 and status_code ~= 404 and status_code ~= 403) then
     io.stdout:write("\nServer returned "..http_stat.statcode..". Sleeping.\n")
     io.stdout:flush()
