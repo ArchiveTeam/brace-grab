@@ -198,6 +198,8 @@ class WgetArgs(object):
         
         if item_type == 'site':
             wget_args.append('http://{0}.brace.io/'.format(item_value))
+            wget_args.append('http://{0}.brace.io/robots.txt'.format(item_value))
+            wget_args.append('http://{0}.brace.io/sitemap.xml'.format(item_value))
         else:
             raise Exception('Unknown item')
         
